@@ -137,7 +137,8 @@ function App() {
       displayFood();
       displaySnake();
     }
-
+    startGame();
+    
     function clearBoard() {
       context.fillStyle = "black";
       context.fillRect(0, 0, WIDTH, HEIGHT);
@@ -224,7 +225,7 @@ function App() {
     document.addEventListener("touchmove", handleTouchMove, false);
 
     return () => clearInterval(gameInterval);
-  }, []);
+  }, []); 
 
   return (
     <div>
