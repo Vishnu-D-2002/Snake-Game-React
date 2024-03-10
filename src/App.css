@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+div {
+  text-align: center;
+}
+
+#container {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border: 1px solid #000;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 3%;
+}
+
+#start {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+#title {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  font-size: 2em;
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #ffffff;
+    text-shadow: 0 0 10px #f50b0b, 0 0 20px #ef1a1a, 0 0 30px #f22e2e;
+  }
+
+  50% {
+    color: #3eccf4;
+    text-shadow: 0 0 10px #85dd42, 0 0 20px #68665c, 0 0 30px #62ec72;
+  }
+
+  100% {
+    color: #ffffff;
+    text-shadow: 0 0 10px #15d225, 0 0 20px #1e5fcf, 0 0 30px #0fbf99;
+  }
+}
+
+.glow-on-hover {
+  width: 140px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
